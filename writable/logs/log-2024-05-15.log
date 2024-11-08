@@ -1,0 +1,229 @@
+CRITICAL - 2024-05-15 09:19:51 --> InvalidArgumentException: whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(826): CodeIgniter\Database\BaseBuilder->_whereIn('IdUsuario', '2', false, 'AND ', null)
+ 2 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseBuilder->whereIn('IdUsuario', '2')
+ 3 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 09:20:01 --> InvalidArgumentException: whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(826): CodeIgniter\Database\BaseBuilder->_whereIn('IdUsuario', 2, false, 'AND ', null)
+ 2 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseBuilder->whereIn('IdUsuario', 2)
+ 3 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 09:20:04 --> InvalidArgumentException: whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 940.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(826): CodeIgniter\Database\BaseBuilder->_whereIn('IdUsuario', 2, false, 'AND ', null)
+ 2 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseBuilder->whereIn('IdUsuario', 2)
+ 3 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:49:06 --> ParseError: syntax error, unexpected token "foreach"
+in APPPATH\Models\Usuario.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-15 19:49:38 --> mysqli_sql_exception: Table 'webloc.clave' doesn't exist in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\tfg\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\tfg\app\Models\Usuario.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-15 19:49:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'webloc.clave' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clave`
+WHERE `Clave` = :Clave:
+AND `IdUsuario` IN :IdUsuario:', [...], false)
+ 2 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:49:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'webloc.clave' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `clave`
+WHERE `Clave` = \'asd\'
+AND `IdUsuario` IN (SELECT `id` FROM `usuario` WHERE `usuario` = \'asd\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clave`
+WHERE `Clave` = \'asd\'
+AND `IdUsuario` IN (SELECT `id` FROM `usuario` WHERE `usuario` = \'asd\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clave`
+WHERE `Clave` = :Clave:
+AND `IdUsuario` IN :IdUsuario:', [...], false)
+ 4 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:49:38 --> [Caused by] mysqli_sql_exception: Table 'webloc.clave' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `clave`
+WHERE `Clave` = \'asd\'
+AND `IdUsuario` IN (SELECT `id` FROM `usuario` WHERE `usuario` = \'asd\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `clave`
+WHERE `Clave` = \'asd\'
+AND `IdUsuario` IN (SELECT `id` FROM `usuario` WHERE `usuario` = \'asd\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clave`
+WHERE `Clave` = \'asd\'
+AND `IdUsuario` IN (SELECT `id` FROM `usuario` WHERE `usuario` = \'asd\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clave`
+WHERE `Clave` = :Clave:
+AND `IdUsuario` IN :IdUsuario:', [...], false)
+ 5 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:52:16 --> ParseError: syntax error, unexpected token "{"
+in APPPATH\Models\Usuario.php on line 23.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:52:49 --> ErrorException: Array to string conversion
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:53:02 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:53:17 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:53:38 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:53:55 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:55:11 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:55:34 --> ErrorException: Undefined array key "usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:56:07 --> ParseError: syntax error, unexpected token "[", expecting identifier or variable or "{" or "$"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:56:14 --> ErrorException: Undefined array key "Usuario"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Models\Usuario.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Usuario"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 24)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:59:17 --> Error: Cannot use object of type stdClass as array
+in APPPATH\Models\Usuario.php on line 24.
+ 1 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 19:59:35 --> ParseError: syntax error, unexpected single-quoted string "Usuario", expecting identifier or variable or "{" or "$"
+in APPPATH\Models\Usuario.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 20:19:54 --> ErrorException: Undefined variable $dato
+in APPPATH\Controllers\Login.php on line 39.
+ 1 APPPATH\Controllers\Login.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\tfg\\app\\Controllers\\Login.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 20:21:26 --> ErrorException: Array to string conversion
+in APPPATH\Views\login.php on line 65.
+ 1 APPPATH\Views\login.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\tfg\\app\\Views\\login.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\tfg\\app\\Views\\login.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login.php', [], true)
+ 5 APPPATH\Controllers\Login.php(40): view('login.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-15 20:23:36 --> ParseError: syntax error, unexpected token "return"
+in APPPATH\Controllers\Login.php on line 40.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('Login/iniciarSesion', 'post')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('Login/iniciarSesion')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('Login/iniciarSesion')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

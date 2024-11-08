@@ -1,0 +1,8 @@
+CRITICAL - 2024-05-06 09:42:41 --> ErrorException: Undefined variable $db
+in APPPATH\Models\Usuario.php on line 20.
+ 1 APPPATH\Models\Usuario.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 20)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

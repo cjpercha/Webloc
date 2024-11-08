@@ -1,0 +1,84 @@
+body {
+	color: #566787;
+	background: #f5f5f5;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 13px;
+	background-color: var(--fondo) !important;
+	padding-top: 70px;
+	padding-bottom: 70px; 
+}
+div {
+	overflow: auto;
+}
+
+:root {
+	--primario: #124e4c;
+	--secundario: #5f7e96;
+	--fondo: #b9f2f0;
+  }
+
+.footer {
+	background-color: var(--primario) !important;
+	color: #ffffff !important;
+}
+
+header {
+	height: 40px;
+	line-height: 40px;
+}
+
+.navbar {
+	background-color: var(--primario) !important;
+}
+
+.navbar a{
+	color: #ffffff !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+	border-color: #ffffff;
+} 
+
+.dropdown-menu a{
+	color: #000000 !important;
+}
+
+.btn-pri {
+	color: #ffffff !important;
+	background-color: var(--primario) !important;
+}
+
+.btn-secun {
+	color: #ffffff !important;
+	background-color: var(--secundario) !important;
+}
+
+.no-scrollbar {
+    overflow: hidden;
+}
+
+.adjust-text {
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+.navbar-nav .nav-item .nav-link {
+    padding-top: 5px;
+    padding-bottom: 5px;
+	font-size: 16px;
+}
+
+.navbar-brand img {
+    height: 60px; 
+    width: auto;
+}
+
+.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

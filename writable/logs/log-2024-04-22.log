@@ -1,0 +1,36 @@
+CRITICAL - 2024-04-22 09:13:53 --> ParseError: syntax error, unexpected token "foreach"
+in APPPATH\Models\Usuario.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-22 09:14:15 --> ParseError: syntax error, unexpected token "return"
+in APPPATH\Models\Usuario.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-22 09:15:43 --> ParseError: syntax error, unexpected identifier "var_dump"
+in APPPATH\Models\Usuario.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-22 09:16:07 --> ParseError: syntax error, unexpected variable "$usuario", expecting "("
+in APPPATH\Models\Usuario.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

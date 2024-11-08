@@ -1,0 +1,41 @@
+ERROR - 2024-05-02 10:20:35 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM ...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM ...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM ...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM ...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-05-02 10:20:35 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = asd);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:20:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = asd);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = asd);')
+ 3 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = asd);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-02 10:20:35 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM usuario WHERE nombre = asd);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = asd);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = asd);')
+ 4 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = asd);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

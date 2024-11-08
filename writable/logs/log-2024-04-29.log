@@ -1,0 +1,288 @@
+CRITICAL - 2024-04-29 07:55:24 --> ParseError: syntax error, unexpected variable "$res"
+in APPPATH\Models\Usuario.php on line 14.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 07:56:02 --> ParseError: syntax error, unexpected double-quote mark
+in APPPATH\Models\Usuario.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 07:56:18 --> ParseError: syntax error, unexpected double-quote mark
+in APPPATH\Models\Usuario.php on line 13.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(40): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:20:21 --> ErrorException: Attempt to read property "clave" on array
+in APPPATH\Models\Usuario.php on line 13.
+ 1 APPPATH\Models\Usuario.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "clave" on array', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 13)
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:21:27 --> TypeError: Unsupported operand types: string + string
+in APPPATH\Models\Usuario.php on line 13.
+ 1 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 08:21:46 --> mysqli_sql_exception: Unknown column 'asd' in 'where clause' in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 08:21:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'asd' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:21:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'asd' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 3 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:21:46 --> [Caused by] mysqli_sql_exception: Unknown column 'asd' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 4 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = asd AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = asd);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 08:22:17 --> mysqli_sql_exception: Unknown column 'usuario' in 'where clause' in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 08:22:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:22:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 08:22:17 --> [Caused by] mysqli_sql_exception: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Models\Usuario.php(14): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 09:41:55 --> mysqli_sql_exception: Unknown column 'usuario' in 'where clause' in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 09:41:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 09:41:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 APPPATH\Models\Usuario.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 09:41:55 --> [Caused by] mysqli_sql_exception: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Models\Usuario.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clave WHERE Clave = clave AND IdUsuario = (SELECT Id FROM usuario WHERE nombre = usuario);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 09:46:24 --> mysqli_sql_exception: Unknown column 'usuario' in 'where clause' in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM ...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM ...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM ...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM ...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 09:46:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 09:46:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 3 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 09:46:24 --> [Caused by] mysqli_sql_exception: Unknown column 'usuario' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM usuario WHERE nombre = usuario;', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 4 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario;')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 10:16:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM ...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM ...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM ...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM ...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 10:16:00 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 10:16:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 10:16:00 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM usuario WHERE nombre = usuario);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Models\Usuario.php(16): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-04-29 10:21:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM ...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM ...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM ...')
+#3 C:\xampp\htdocs\tfg\app\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM ...')
+#4 C:\xampp\htdocs\tfg\app\Controllers\Login.php(44): App\Models\Usuario->login(Array)
+#5 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-04-29 10:21:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 10:21:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-29 10:21:12 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Id FROM usuario WHERE nombre = usuario);', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 4 APPPATH\Models\Usuario.php(17): CodeIgniter\Database\BaseConnection->query('SELECT Id FROM usuario WHERE nombre = usuario);')
+ 5 APPPATH\Controllers\Login.php(44): App\Models\Usuario->login([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->iniciarSesion()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

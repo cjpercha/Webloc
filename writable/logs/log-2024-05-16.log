@@ -1,0 +1,148 @@
+CRITICAL - 2024-05-16 08:24:48 --> ParseError: Unclosed '{' on line 63
+in APPPATH\Views\login.php on line 74.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login.php', [], true)
+ 3 APPPATH\Controllers\Usuarios.php(15): view('login.php')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Usuarios->login()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 08:51:01 --> ParseError: syntax error, unexpected token "echo", expecting "," or ";"
+in APPPATH\Views\registro.php on line 62.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registro.php', [], true)
+ 3 APPPATH\Controllers\Usuarios.php(20): view('registro.php')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Usuarios->registro()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 08:52:12 --> Error: Undefined constant "r\n"
+in APPPATH\Views\registro.php on line 61.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('registro.php', [], true)
+ 4 APPPATH\Controllers\Usuarios.php(20): view('registro.php')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Usuarios->registro()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuarios))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 10:34:09 --> ParseError: syntax error, unexpected single-quoted string "max_length", expecting "]"
+in APPPATH\Controllers\Login.php on line 19.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('Login/registro', 'post')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('Login/registro')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('Login/registro')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:00:05 --> Error: Call to a member function get() on bool
+in APPPATH\Models\Usuario.php on line 45.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:20:38 --> ParseError: syntax error, unexpected token ")"
+in APPPATH\Models\Usuario.php on line 44.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Usuario')
+ 3 APPPATH\Controllers\Login.php(98): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:22:58 --> ErrorException: Object of class DateInterval could not be converted to int
+in APPPATH\Models\Usuario.php on line 45.
+ 1 APPPATH\Models\Usuario.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Object of class DateInterval could not be converted to int', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 45)
+ 2 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 11:23:41 --> Error: Call to a member function format() on string
+in APPPATH\Models\Usuario.php on line 46.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-05-16 21:38:40 --> mysqli_sql_exception: Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\tfg\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\tfg\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\tfg\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\tfg\app\Models\Usuario.php(60): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\tfg\app\Controllers\Login.php(100): App\Models\Usuario->registro(Array)
+#6 C:\xampp\htdocs\tfg\system\CodeIgniter.php(941): App\Controllers\Login->registro()
+#7 C:\xampp\htdocs\tfg\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\tfg\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\tfg\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-05-16 21:38:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (:usuario:, :correo:, :clave:, :fecha:)', [...], false)
+ 2 APPPATH\Models\Usuario.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:38:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (\'b\', \'b@gmail.com\', \'b\', \'1990-11-11\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (\'b\', \'b@gmail.com\', \'b\', \'1990-11-11\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (:usuario:, :correo:, :clave:, :fecha:)', [...], false)
+ 4 APPPATH\Models\Usuario.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:38:40 --> [Caused by] mysqli_sql_exception: Unknown column 'fecha' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (\'b\', \'b@gmail.com\', \'b\', \'1990-11-11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (\'b\', \'b@gmail.com\', \'b\', \'1990-11-11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (\'b\', \'b@gmail.com\', \'b\', \'1990-11-11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`usuario`, `correo`, `clave`, `fecha`) VALUES (:usuario:, :correo:, :clave:, :fecha:)', [...], false)
+ 5 APPPATH\Models\Usuario.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:39:31 --> ErrorException: Undefined array key "fecha"
+in APPPATH\Models\Usuario.php on line 41.
+ 1 APPPATH\Models\Usuario.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fecha"', 'C:\\xampp\\htdocs\\tfg\\app\\Models\\Usuario.php', 41)
+ 2 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:39:45 --> Error: Call to a member function get() on bool
+in APPPATH\Models\Usuario.php on line 61.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:43:48 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Connection::affected_rows()
+in APPPATH\Models\Usuario.php on line 61.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:45:14 --> Error: Call to a member function getInsertID() on bool
+in APPPATH\Models\Usuario.php on line 61.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-16 21:46:35 --> Error: Call to a member function getInsertID() on bool
+in APPPATH\Models\Usuario.php on line 61.
+ 1 APPPATH\Controllers\Login.php(100): App\Models\Usuario->registro([...])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Login->registro()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
