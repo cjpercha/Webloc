@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Historia;
+use App\Models\Usuario;
 
 class Historias extends BaseController
 {
@@ -20,15 +21,13 @@ class Historias extends BaseController
 
         }
 
-        //$historiaM = new Historia();
+        //$historia = '';
+        $historia = $historiaM->getHistoria($idHistoria);
 
-        $historia = '';
-        //$historia = $historiaM->getPerfil($idHistoria);
-
-        return view('editarHistoria.php', ['accion' => 'nuevo', 'categorias' => $categorias, 'historia' => $historia]);
+        return view('editarHistoria.php', ['accion' => 'editar', 'categorias' => $categorias, 'historia' => $historia]);
     }
 
-    public function perfil($idUsuario = '')
+    /*public function perfil($idUsuario = '') //Cambiar esto para historia
     {
         // Depende del usuario que lo visite podrá editar su perfil, seguir al usuario o solamente verlo
         // por lo que tengo que mandar al perfil que sea correspondiente
@@ -38,17 +37,18 @@ class Historias extends BaseController
         $perfil = $usuario->getPerfil($idUsuario);
         
         return view('perfil.php', ['perfil' => $perfil]);
-    }
+    }*/
 
-    public function configurar($idUsuario)
+    public function configurar($idHistoria) // Cambiar esto para historia
     {
         // Mandar los datos del usuario para que se carguen en el form
 
-        $usuario = new Usuario();
+        $historiaM = new Historia();
 
-        $perfil = $usuario->getPerfil($idUsuario);
+        $historia = $historiaM->getHistoria($idHistoria);
 
-        return view('configPerfil.php', ['perfil' => $perfil]);
+        //return view('configPerfil.php', ['perfil' => $perfil]);
+        return view('editarHistoria.php', ['historia' => $historia]);
     }
 
     public function actualizar() // Creo que no es necesario mandar el id porque lo podré sacar del formulario
@@ -59,11 +59,8 @@ class Historias extends BaseController
         $form_data = $this->request->getPost();
         $reglas = [
             'titulo' => ['required', 'max_length[255]'],
-            'correo' => ['required', 'max_length[255]'],
-            'fecha' => ['required'],
-            'nombre' => ['max_length[255]'],
-            'apellidos' => ['max_length[255]'],
-            'descripcion' => ['max_length[255]'],
+            //'categorias' => ['required'],
+            'descripcion' => ['required', 'max_length[255]'],
             'imagen' => [
                 //'uploaded[imagen]',  // Equivalente a required
                 'is_image[imagen]',
@@ -74,25 +71,16 @@ class Historias extends BaseController
         ];
 
         $mensaje_error = [
-            'usuario' => [
+            'titulo' => [
                 'required' => 'Este campo es obligatorio',
                 'max_length' => 'El valor introducido es demasiado grande',
             ],
-            'correo' => [
-                'required' => 'Este campo es obligatorio',
-                'max_length' => 'El valor introducido es demasiado grande',
-            ],
-            'fecha' => [
-                'required' => 'Este campo es obligatorio'
-            ],
-            'nombre' => [
-                'max_length' => 'El valor introducido es demasiado grande',
-            ],
-            'apellidos' => [
-                'max_length' => 'El valor introducido es demasiado grande',
+            'categorias' => [
+                'required' => 'Debe marcar alguna categoria'
             ],
             'descripcion' => [
-                'max_length' => 'Ha superado el límite de caracteres.',
+                'required' => 'Este campo es obligatorio',
+                'max_length' => 'El valor introducido es demasiado grande'
             ],
             'imagen' => [
                 // 'uploaded' => 'La imagen es requerida',
@@ -107,28 +95,51 @@ class Historias extends BaseController
         //*
 
         $form_data = $this->request->getPost();
-        //$idUsuario = $form_data['idUsuario']; //Esto lo saco de un hidden o de session. También puedo meterlo como idAutor
+        $idUsuario = $_SESSION['idUsuario']; //Esto no se si lo necesitare. También puedo meterlo como idAutor
+       /* //-----------------------------
+        $img = $this->request->getFile('imagen');
+            $nombreImagen = '';
+            $idHistoria = $form_data['idHistoria'];
+            if($img->isValid()){
+                $ext = $img->getClientExtension();
+                $nombreImagen = 'portada_'.$idHistoria.'.'.$ext;// Tengo que cambiar como se guardan las portadas
+                $form_data['nombreImagen'] = $nombreImagen;
+            }
+        //-----------------------------*/
         
-        var_dump($form_data);die;
 
         if(!$validations) {
 
-            $perfil = $usuario->getPerfil($idUsuario);
-            return view('configPerfil.php', ['perfil' => $perfil, 'validation' => $this->validator]);
+            $usuario = new Usuario();
+            $perfil = $usuario->getPerfil($idUsuario); // Cambiar por Historia
+            $categorias = $historiaM->getCategorias();
+            $historia = ['titulo' => $form_data['titulo'],
+                        'descripcion' => $form_data['descripcion']
+                    ];
+            $data = [
+                    'historia' => $historia, // Si no funciona tengo que 'construir la historia' y mandarla
+                    'validation' => $this->validator,
+                    'accion' => 'editar',
+                    'categorias' => $categorias
+                ];
+            return view('editarHistoria.php', $data);
 
         } else {
 
             // Compruebo si se ha subido una imagen y guardo el nombre asignado
             $img = $this->request->getFile('imagen');
             $nombreImagen = '';
+            $idHistoria = $form_data['idHistoria'];
             if($img->isValid()){
                 $ext = $img->getClientExtension();
-                $nombreImagen = 'perfil_'.$idUsuario.'.'.$ext;
+                $nombreImagen = 'portada_'.$idHistoria.'.'.$ext;// Tengo que cambiar como se guardan las portadas
                 $form_data['nombreImagen'] = $nombreImagen;
             }
-
-            $actualizacion = $usuario->actualizarPerfil($form_data);
+            var_dump($form_data);die;
+            $actualizacion = $historia->actualizarPerfil($form_data);
             $perfil = $usuario->getPerfil($idUsuario);
+
+            var_dump($historia);die;
 
             if(!$actualizacion){
                 return view('configPerfil.php', ['perfil' => $perfil, 'error1' => 'Ha ocurrido un error al actualizar el perfil']);
@@ -144,7 +155,7 @@ class Historias extends BaseController
         }
     }
 
-    public function actualizarClave() // Creo que no es necesario mandar el id porque lo podré sacar del formulario
+    /*public function actualizarClave() // Creo que no es necesario mandar el id porque lo podré sacar del formulario
     {
         
         $usuario = new Usuario();
@@ -194,5 +205,5 @@ class Historias extends BaseController
                 return view('configPerfil.php', ['perfil' => $perfil, 'conf2' => 'Se ha actualizado la contraseña']);
             }
         }
-    }
+    }*/
 }

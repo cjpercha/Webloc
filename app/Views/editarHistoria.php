@@ -58,29 +58,45 @@
 			$i = 0;
 			echo '<div class="row">';
 			foreach($categorias as $categoria){
-				$data = [
-				  'name'    => 'categoria[]',
-				  'id'      => 'categoria[]',
-				  'value'   => $categoria,
-				  //'checked' => true,
-				  //'style'   => 'margin:10px',
-			  ];
-			  echo '<div class="col">';
-			  echo form_checkbox($data);
-			  echo form_label($categoria, 'categoria[]', ['class' => 'm-1 mr-3']);
-			  echo '</div>';
-			  $i++;
-			  if($i >= 2) {
-				echo '<div class="w-100"></div>';
-				$i = 0;
-			  }
+				if($categoria != 'Sin categoria'){
+					$data = [
+						'name'    => 'categoria[]',
+						'id'      => 'categoria[]',
+						'value'   => $categoria,
+						//'checked' => true,
+						//'style'   => 'margin:10px',
+					];	
+				
+						
+					echo '<div class="col">';
+					echo form_checkbox($data);
+					echo form_label($categoria, 'categoria[]', ['class' => 'm-1 mr-3']);
+					echo '</div>';
+					$i++;
+					if($i >= 2) {
+						echo '<div class="w-100"></div>';
+						$i = 0;
+					}
+				}
 			}
 			echo '</div>';
 			  
-			  
+			if(isset($validation)) {
+
+				if($validation->hasError('categoria')) {
+					?><div class="text-danger"><?php
+						echo $validation->getError('categoria');
+					?></div><?php
+				}
+				
+			}
 		  // -----------------
 			echo '<br>';
-			$data['value'] = '';
+			$data = [
+				'name'    => 'descripcion',
+				'id'      => 'descripcion',
+				'value'   => ''
+			];
 			if(isset($historia['descripcion'])) {
 				
 				$data['value'] = $historia['descripcion'];
