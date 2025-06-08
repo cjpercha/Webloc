@@ -124,7 +124,6 @@ class Usuario extends Model {
             $datos['Imagen'] = $data['nombreImagen'];
         }
 
-        
         $db      = \Config\Database::connect();
         $builder = $db->table('usuario');
         $builder->update($datos, 'Id = '.$data['idUsuario']);

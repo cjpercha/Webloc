@@ -7,7 +7,6 @@ use CodeIgniter\Model;
 class Historia extends Model {
 
     public function getCategorias() {
-        $perfil = [];
         $db      = \Config\Database::connect();
         $builder = $db->table('categoria')->select('*');
         $res = $builder->get()->getResult();
@@ -15,12 +14,51 @@ class Historia extends Model {
 
         foreach($res as $categoria) {
 
-            $categorias[$categoria->Nombre] = $categoria->Nombre;
+            $categorias[$categoria->Id] = $categoria->Nombre;
 
         }
         
         return $categorias;
     }
+
+    public function getNombreCategoria($idCategoria) {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('categoria')->select('Nombre');
+        
+        $nombre = $builder->where('Id', $idCategoria)->get()->getRow();
+
+        return $nombre ? $nombre->Nombre : FALSE;
+    }
+
+    public function getCategoriasHistoria($idHistoria) {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('categoriaHistoria')->select('IdCategoria');
+
+        $categorias = [];
+        $res = $builder->where('IdHistoria', $idHistoria)->get();
+
+        foreach ($res->getResult() as $row) {
+            $categorias[] = $row->IdCategoria;
+        }
+
+        return $categorias;
+    }
+
+    public function getNombreCategoriasHistoria($idHistoria) {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('categoriaHistoria')->select('IdCategoria');
+
+        $categorias = [];
+        $res = $builder->where('IdHistoria', $idHistoria)->get();
+
+        foreach ($res->getResult() as $row) {
+            $categorias[] = $this->getNombreCategoria($row->IdCategoria);
+        }
+
+        return $categorias;
+    }
+
+
 
     public function getHistoria($idHistoria) {
         $historia = [];
@@ -28,71 +66,148 @@ class Historia extends Model {
             $db      = \Config\Database::connect();
             $builder = $db->table('historia')->select('*')->where('Id', $idHistoria);
             $res = $builder->get()->getRow();
-            $imagen = $res->Portada;
-            if(!isset($res->Portada)) $imagen = 'perfil.png';
-            // AÑADIR CATEGORIAS
+
+            if (!$res) return $historia;
+
+            $imagen = isset($res->Portada) ? $res->Portada : 'portada.png';
+            $categorias = $this->getCategoriasHistoria($idHistoria);
             $historia = [
-                'idHistoria' => $res->Id,
+                'idHistoria' => $idHistoria,
                 'titulo' => $res->Titulo,
                 'fechaPublicacion' => $res->FechaPublicacion,
                 'descripcion' => $res->Descripcion,
                 'estado' => $res->Estado,
-                'idAutor' => $res->idAutor,
+                'IdAutor' => $res->IdAutor,
                 'puntuacion' => $res->Puntuacion,
                 'imagen' => $imagen,
+                'categorias' => $categorias
             ];
         }
-        // $perfil puede tener campos en NULL pero eso es para la gente que no ha rellenado esos campos, 
-        // hay que comprobarlo en la vista para saber si mostrar algo o no
         return $historia;
     }
 
-    public function actualizarPerfil($data) {
+    public function getHistoriasUsuario($idUsuario) {
+        $historias = [];
+        if ($idUsuario > 0) {
+            $db      = \Config\Database::connect();
+            $builder = $db->table('historia')->select('*')->where('IdAutor', $idUsuario);
+            $res = $builder->get()->getResult();
 
-        $datos = [
-            'Nombre' => $data['nombre'],
-            'Apellidos' => $data['apellidos'],
-            'Usuario' => $data['usuario'],
-            'Correo' => $data['correo'],
-            'FechaNacimiento' => $data['fecha'],
+            if (!$res) return $historias;
+
+            foreach ($res as $row) {
+                $imagen = isset($row->Portada) ? $row->Portada : 'portada.png';
+                $categorias = $this->getCategoriasHistoria($row->Id);
+                $historias[] = [
+                    'idHistoria' => $row->Id,
+                    'titulo' => $row->Titulo,
+                    'fechaPublicacion' => $row->FechaPublicacion,
+                    'descripcion' => $row->Descripcion,
+                    'estado' => $row->Estado,
+                    'IdAutor' => $row->IdAutor,
+                    'puntuacion' => $row->Puntuacion,
+                    'imagen' => $imagen,
+                    'categorias' => $categorias
+                ];
+            }
+        }
+        return $historias;
+    }
+
+
+    public function crearHistoria($data) {
+
+        $fecha = date("Y-m-d H:i:s");
+
+        $historia = [
+            'Titulo' => $data['titulo'],
+            'FechaPublicacion' => $fecha,
             'Descripcion' => $data['descripcion'],
+            'Estado' => 'En progreso',
+            'Puntuacion' => 0,
+            'IdAutor' => $data['IdAutor']
         ];
 
         if(isset($data['nombreImagen'])) {
             $datos['Imagen'] = $data['nombreImagen'];
         }
 
-        
+
         $db      = \Config\Database::connect();
-        $builder = $db->table('usuario');
-        $builder->update($datos, 'Id = '.$data['idUsuario']);
+        $db->transStart();
 
-        return $builder;
+        
+        $builder = $db->table('historia');
 
+        $builder->insert($historia);
+
+        $id = $db->insertID();
+
+        $builder = $db->table('categoriaHistoria');
+        foreach ($data['categoria'] as $idCategoria){
+            
+            $insert = [
+            'idCategoria' => $idCategoria,
+            'idHistoria' => $id,
+            ];
+            $builder->insert($insert);
+        }
+
+        $db->transComplete();
+
+        if($db->transStatus()){
+            return $id;
+        } else {
+            return $db->transStatus();
+        }
     }
 
     public function actualizarHistoria($data) {
 
+        $fecha = date("Y-m-d H:i:s");
+        $id = $data['idHistoria'];
+
         $datos = [
             'Titulo' => $data['titulo'],
-            'FechaPublicacion' => $data['fechaPublicacion'],
+            'FechaPublicacion' => $fecha,
             'Descripcion' => $data['descripcion'],
-            'Estado' => $data['estado'],
-            'Puntuacion' => $data['puntuacion'],
+            'Estado' => 'En progreso',
+            'Puntuacion' => 0,
         ];
-
-        //Categorias
 
         if(isset($data['nombreImagen'])) {
             $datos['Imagen'] = $data['nombreImagen'];
         }
 
-        
+        //var_dump($data);die;
+
         $db      = \Config\Database::connect();
+        $db->transStart();
+
         $builder = $db->table('historia');
         $builder->update($datos, 'Id = '.$data['idHistoria']);
 
-        return $builder;
+        $builder = $db->table('categoriaHistoria');
+        $builder->where('idHistoria', $id)->delete();
+        if(isset($data['categoria'])) {
+            foreach ($data['categoria'] as $idCategoria){
+                
+                $insert = [
+                'idCategoria' => $idCategoria,
+                'idHistoria' => $id,
+                ];
+                $builder->insert($insert);
+            }
+        }
+
+        $db->transComplete();
+
+        if($db->transStatus()){
+            return $data['idHistoria'];
+        } else {
+            return $db->transStatus();
+        }
+        
 
     }
 }

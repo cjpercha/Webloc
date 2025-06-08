@@ -12,7 +12,7 @@
                     <?= anchor('Usuarios/inicio', 'Buscar', 'class="nav-link"') ?>
                 </li>
                 <li class="nav-item">
-                    <?= anchor('Usuarios/inicio', 'Categorias?', 'class="nav-link"') ?>
+                    <?= anchor('Usuarios/inicio', 'Categorias', 'class="nav-link"') ?>
                 </li>
                 <?php if (isset($_SESSION['esAdmin']) && $_SESSION['esAdmin'] == "1") { ?>
                     <li class="nav-item"><?= anchor('Usuarios/inicio', 'Admin', 'class="nav-link"') ?></li>
@@ -48,7 +48,7 @@
                 <?php } else { ?>
                     <span class="d-none d-md-inline">
                         <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="rounded-circle me-1" width="32" height="32" src='<?= base_url() ?>public/assets/imagen/perfil/<?= $_SESSION['imagen'] ?>' class="img-fluid" alt="Perfil">
+                            <img class="rounded-circle me-1" width="32" height="32" src='<?= base_url() ?>public/assets/imagen/perfil/<?= $_SESSION['imagen'] ?>?ts=<?= time() ?>' class="img-fluid" alt="Perfil">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li class="nav-item mt-1 ml-2">

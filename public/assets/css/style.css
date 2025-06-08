@@ -15,7 +15,14 @@ div {
 	--primario: #124e4c;
 	--secundario: #5f7e96;
 	--fondo: #b9f2f0;
+	--bs-primary: #124e4c;
   }
+
+.btn-primary {
+  background-color: #124e4c !important;
+  border-color: #124e4c !important;
+  color: white !important;
+}
 
 .footer {
 	background-color: var(--primario) !important;

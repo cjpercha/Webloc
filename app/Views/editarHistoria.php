@@ -25,6 +25,7 @@
 			if(isset($historia['idHistoria'])) $idHistoria = $historia['idHistoria'];
 			$data = [
 				'idHistoria'    => $idHistoria,
+				'IdAutor'		=> $_SESSION['idUsuario']
 			];
 			echo form_hidden($data);
 
@@ -56,13 +57,14 @@
 			/*echo form_multiselect('categorias', $categorias); */
 			
 			$i = 0;
+			$j = 1;
 			echo '<div class="row">';
 			foreach($categorias as $categoria){
 				if($categoria != 'Sin categoria'){
 					$data = [
-						'name'    => 'categoria[]',
+						'name'    => 'categoria[]',//Tengo que llamarlo asi para que se guarden todas las categorias
 						'id'      => 'categoria[]',
-						'value'   => $categoria,
+						'value'   => $j,
 						//'checked' => true,
 						//'style'   => 'margin:10px',
 					];	
@@ -73,6 +75,7 @@
 					echo form_label($categoria, 'categoria[]', ['class' => 'm-1 mr-3']);
 					echo '</div>';
 					$i++;
+					$j++;
 					if($i >= 2) {
 						echo '<div class="w-100"></div>';
 						$i = 0;
@@ -150,15 +153,19 @@
 			<div class="row mt-3">
 					<div class="col p-1 d-flex justify-content-center align-items-center">
 						<?php
-							// Aqui puedo meter un submit diferente para cada accion pero si lo hago con solo uno creo que sirve tambien
-							$texto = 'Crear historia';
-							
-							if($accion == 'editar') {
+							// Aqui puedo meter un submit diferente
+
+							$texto = "";
+							if($accion == 'nuevo') {
+								
+								$texto = 'Crear historia';
+								echo form_submit('accion', $texto, 'class="btn btn-pri"');
+							} elseif($accion == 'editar') {
 								
 								$texto = 'Actualizar historia';
+								echo form_submit('accion', $texto, 'class="btn btn-pri"');
 							}
 
-							echo form_submit('actualizar', $texto, 'class="btn btn-pri"');
 							echo form_close();
 						?>
 					</div>

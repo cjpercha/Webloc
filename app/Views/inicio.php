@@ -6,7 +6,7 @@
 		<div class="table-title">
 			<div>
 				<div>
-					<h2>INICIO</h2>
+					<h2 class="text-center">Bienvenidos a Webloc, donde todo el mundo puede escribir, puedes empezar creando una cuenta o leyendo lo que los demás usuarios han escrito</h2>
 					<div>
 					
 

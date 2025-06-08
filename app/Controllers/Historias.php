@@ -27,18 +27,6 @@ class Historias extends BaseController
         return view('editarHistoria.php', ['accion' => 'editar', 'categorias' => $categorias, 'historia' => $historia]);
     }
 
-    /*public function perfil($idUsuario = '') //Cambiar esto para historia
-    {
-        // Depende del usuario que lo visite podrá editar su perfil, seguir al usuario o solamente verlo
-        // por lo que tengo que mandar al perfil que sea correspondiente
-
-        $usuario = new Usuario();
-
-        $perfil = $usuario->getPerfil($idUsuario);
-        
-        return view('perfil.php', ['perfil' => $perfil]);
-    }*/
-
     public function configurar($idHistoria) // Cambiar esto para historia
     {
         // Mandar los datos del usuario para que se carguen en el form
@@ -47,16 +35,16 @@ class Historias extends BaseController
 
         $historia = $historiaM->getHistoria($idHistoria);
 
-        //return view('configPerfil.php', ['perfil' => $perfil]);
         return view('editarHistoria.php', ['historia' => $historia]);
-    }
-
+    }  
+    
     public function actualizar() // Creo que no es necesario mandar el id porque lo podré sacar del formulario
     {
         
         $historiaM = new Historia();
 
         $form_data = $this->request->getPost();
+
         $reglas = [
             'titulo' => ['required', 'max_length[255]'],
             //'categorias' => ['required'],
@@ -92,21 +80,10 @@ class Historias extends BaseController
         ];
 
         $validations = $this->validate($reglas, $mensaje_error);
-        //*
 
-        $form_data = $this->request->getPost();
-        $idUsuario = $_SESSION['idUsuario']; //Esto no se si lo necesitare. También puedo meterlo como idAutor
-       /* //-----------------------------
-        $img = $this->request->getFile('imagen');
-            $nombreImagen = '';
-            $idHistoria = $form_data['idHistoria'];
-            if($img->isValid()){
-                $ext = $img->getClientExtension();
-                $nombreImagen = 'portada_'.$idHistoria.'.'.$ext;// Tengo que cambiar como se guardan las portadas
-                $form_data['nombreImagen'] = $nombreImagen;
-            }
-        //-----------------------------*/
-        
+        //$form_data = $this->request->getPost();
+        $idUsuario = $form_data['IdAutor']; //Esto no se si lo necesitare. También puedo meterlo como idAutor
+             
 
         if(!$validations) {
 
@@ -116,6 +93,7 @@ class Historias extends BaseController
             $historia = ['titulo' => $form_data['titulo'],
                         'descripcion' => $form_data['descripcion']
                     ];
+            $idAutor = $form_data['IdAutor'];
             $data = [
                     'historia' => $historia, // Si no funciona tengo que 'construir la historia' y mandarla
                     'validation' => $this->validator,
@@ -135,75 +113,38 @@ class Historias extends BaseController
                 $nombreImagen = 'portada_'.$idHistoria.'.'.$ext;// Tengo que cambiar como se guardan las portadas
                 $form_data['nombreImagen'] = $nombreImagen;
             }
-            var_dump($form_data);die;
-            $actualizacion = $historia->actualizarPerfil($form_data);
-            $perfil = $usuario->getPerfil($idUsuario);
-
-            var_dump($historia);die;
-
-            if(!$actualizacion){
-                return view('configPerfil.php', ['perfil' => $perfil, 'error1' => 'Ha ocurrido un error al actualizar el perfil']);
+            $actualizacion = '';
+            if($form_data['accion'] == 'Crear historia') {
+                $actualizacion = $historiaM->crearHistoria($form_data);
             } else {
-                
-                if($img->isValid()){ // Si hay una imagen nueva y ha funcionado la actualización, guardo la imagen y actualizo
-                    $_SESSION['imagen'] = $nombreImagen;
-                    $resImg = $img->move('public/assets/imagen/perfil/', $nombreImagen, true);
-                }
-                $_SESSION['usuario'] = $form_data['usuario'];
-                return view('configPerfil.php', ['perfil' => $perfil, 'conf1' => 'Se ha actualizado el perfil']);
+                $actualizacion = $historiaM->actualizarHistoria($form_data);
             }
+            
+            // Esto está mal, tendría que sacar el ide de la historia, porque el id usuario es el autor
+            //$historia = $historia->getHistoria($idUsuario);
+
+            $historia = [];
+
+            /*if(!$actualizacion){
+                if($form_data['accion'] == 'Crear historia') {
+                return view('editarHistoria.php', ['accion' => 'nuevo', 'error1' => 'Ha ocurrido un error al crear la historia']);
+                } else {
+                    $historia = $historiaM->getHistoria($idHistoria);
+                    return view('editarHistoria.php', ['accion' => 'editar', 'historia' => $historia, 'error1' => 'Ha ocurrido un error al actualizar la historia']);
+                }
+            } else {
+                $historia = $historiaM->getHistoria($idHistoria);
+                return view('editarHistoria.php', ['accion' => 'editar', 'historia' => $historia, 'conf1' => 'Se ha actualizado la historia']);
+            }*/
+
+            $usuarioM = new Usuario();
+            $perfil = $usuarioM->getPerfil($idUsuario);
+            $historias = $historiaM->getHistoriasUsuario($idUsuario);
+            $categorias = $historiaM->getCategorias();
+            
+            return view('perfil.php', ['perfil' => $perfil, 'historias' => $historias, 'categorias' => $categorias]);
         }
     }
 
-    /*public function actualizarClave() // Creo que no es necesario mandar el id porque lo podré sacar del formulario
-    {
-        
-        $usuario = new Usuario();
-
-        $reglas = [
-            'claveAct' => ['required', 'max_length[255]'],
-            'clave' => ['required', 'max_length[255]', 'min_length[1]'], //ACTUALIZAR EL MINIMO EN LAS CONTRASEÑAS AGUACATE
-            'clave2' => ['required', 'max_length[255]', 'min_length[1]','matches[clave]'], //ACTUALIZAR EL MINIMO EN LAS CONTRASEÑAS AGUACATE
-        ];
-
-        $mensaje_error = [
-            'claveAct' => [
-                'required' => 'Este campo es obligatorio',
-                'max_length' => 'El valor introducido es demasiado grande',
-            ],
-            'clave' => [
-                'required' => 'Este campo es obligatorio',
-                'max_length' => 'El valor introducido es demasiado grande',
-                'min_length' => 'La contraseña debe tener al menos 10 caracteres',
-            ],
-            'clave2' => [
-                'required' => 'Este campo es obligatorio',
-                'max_length' => 'El valor introducido es demasiado grande',
-                'min_length' => 'La contraseña debe tener al menos 10 caracteres',
-                'matches' => 'Las contraseñas no coinciden',
-            ]
-        ];
-
-        $validations = $this->validate($reglas, $mensaje_error);
-
-        $form_data = $this->request->getPost();
-        $idUsuario = $form_data['idUsuario'];
-
-        if(!$validations) {
-
-            $perfil = $usuario->getPerfil($idUsuario);
-            return view('configPerfil.php', ['perfil' => $perfil, 'validation' => $this->validator]);
-
-        } else {
-
-            $actualizacion = $usuario->actualizarClave($form_data);
-
-            $perfil = $usuario->getPerfil($idUsuario);
-            if(!$actualizacion){
-                return view('configPerfil.php', ['perfil' => $perfil, 'error2' => 'Ha ocurrido un error al actualizar la contraseña']);
-            } else {
-                return view('configPerfil.php', ['perfil' => $perfil, 'conf2' => 'Se ha actualizado la contraseña']);
-            }
-        }
-    }*/
+    
 }

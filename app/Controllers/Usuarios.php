@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Usuario;
+use App\Models\Historia;
 
 class Usuarios extends BaseController
 {
@@ -27,10 +28,13 @@ class Usuarios extends BaseController
         // por lo que tengo que mandar al perfil que sea correspondiente
 
         $usuario = new Usuario();
+        $historiasM = new Historia();
 
         $perfil = $usuario->getPerfil($idUsuario);
+        $historias = $historiasM->getHistoriasUsuario($idUsuario);
+        $categorias = $historiasM->getCategorias();
         
-        return view('perfil.php', ['perfil' => $perfil]);
+        return view('perfil.php', ['perfil' => $perfil, 'historias' => $historias, 'categorias' => $categorias]);
     }
 
     public function configurar($idUsuario)
@@ -50,12 +54,12 @@ class Usuarios extends BaseController
         $usuario = new Usuario();
 
         $reglas = [
-            'usuario' => ['required', 'max_length[255]'],
-            'correo' => ['required', 'max_length[255]'],
+            'usuario' => ['required', 'max_length[50]'],
+            'correo' => ['required', 'max_length[100]'],
             'fecha' => ['required'],
-            'nombre' => ['max_length[255]'],
-            'apellidos' => ['max_length[255]'],
-            'descripcion' => ['max_length[255]'],
+            'nombre' => ['max_length[50]'],
+            'apellidos' => ['max_length[50]'],
+            'descripcion' => ['max_length[1002]'],
             'imagen' => [
                 //'uploaded[imagen]',  // Equivalente a required
                 'is_image[imagen]',
@@ -84,7 +88,7 @@ class Usuarios extends BaseController
                 'max_length' => 'El valor introducido es demasiado grande',
             ],
             'descripcion' => [
-                'max_length' => 'Ha superado el límite de caracteres.',
+                'max_length' => 'Ha superado el límite de 1000 caracteres.',
             ],
             'imagen' => [
                 // 'uploaded' => 'La imagen es requerida',
